@@ -96,7 +96,8 @@ def main():
             # Change user input to index of list
             edit_item_index = edit_position_input - 1
             # Edit the list
-            
+            edited_item = ranking_list.pop(edit_item_index)
+            ranking_list.insert(edit_item_index, edit_item_input)
 
 
             print("\nRANK LIST")
