@@ -48,20 +48,60 @@ def main():
                 print(f"{str(i + 1)}: {ranking_list[i]}")
         # Insert item
         elif selection == "4":
-            print("INSERT ITEM")
-            position = input("Insert Position: ")
-            item = input("Item to Insert: ")
-            ranking_list.append[int(position - 1)](item)
+            print("\nINSERT ITEM")
+            position_insert_input = int(input("Insert Position: "))
+            new_item = input("Enter item: ")
+            position_insert = position_insert_input - 1
+            ranking_list.insert(position_insert, new_item)
+
 
             print("\nRANK LIST")
             for i in range(len(ranking_list)):
                 print(f"{str(i + 1)}: {ranking_list[i]}")
+        # Remove Item
         elif selection == "5":
-            print("optrion 5")
+            print("\nREMOVE ITEM")
+            # Get user input
+            position_remove_input = int(input("Insert Position: "))
+            # Change user input to index of list
+            position_remove = position_remove_input - 1
+            # Print what was removed at what position
+            print(f"{ranking_list[position_remove]} removed from position {str(position_remove_input)}")
+            ranking_list.pop(position_remove)
+
+            print("\nRANK LIST")
+            for i in range(len(ranking_list)):
+                print(f"{str(i + 1)}: {ranking_list[i]}")
+        # Move to Position
         elif selection == "6":
-            print("option 6")
+            print("\nMOVE TO POSITION")
+            # Get user input
+            move_item_from_input = int(input("Move Item from: "))
+            move_item_to_input = int(input("Move Item to : "))
+            # Change user input to index of list
+            move_item_from = move_item_from_input - 1
+            move_item_to = move_item_to_input - 1
+            # Move the item from one part of the list to another
+            moved_item = ranking_list.pop(move_item_from)
+            ranking_list.insert(move_item_to, moved_item)
+
+            print("\nRANK LIST")
+            for i in range(len(ranking_list)):
+                print(f"{str(i + 1)}: {ranking_list[i]}")
+        # Edit Item
         elif selection == "7":
-            print("option 7")
+            print("\nEDIT ITEM")
+            edit_position_input = int(input("Enter Position: "))
+            edit_item_input = input("Replace with: ")
+            # Change user input to index of list
+            edit_item_index = edit_position_input - 1
+            # Edit the list
+            
+
+
+            print("\nRANK LIST")
+            for i in range(len(ranking_list)):
+                print(f"{str(i + 1)}: {ranking_list[i]}")
         elif selection == "8":
             done = True
 
