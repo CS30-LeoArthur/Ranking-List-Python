@@ -23,15 +23,19 @@ def main():
         # Print list
         if selection == "1":
             print("\nRANK LIST")
+            # Check if there is anything in the list
             if len(ranking_list) == 0:
                     print("No Items in the Rank List")
+            # If there is something in the list then print it
             else:
                 for i in range(len(ranking_list)):
                     print(f"{str(i + 1)}: {ranking_list[i]}")
         # Add item to end
         elif selection == "2":
             print("\nADD ITEM TO END")
+            # Get user input
             new_item = input("Enter item: ")
+            # Append user's input to list
             ranking_list.append(new_item)
 
             print("\nRANK LIST")
@@ -40,7 +44,9 @@ def main():
         # Remove last item
         elif selection == "3":
             print("REMOVE LAST ITEM")
+            # Have to print removed item before it actually is removed from the list
             print(f"{ranking_list[-1]} has been removed from the end of the list.")
+            # Remove item
             ranking_list.pop()
 
             print("\nRANK LIST")
@@ -49,8 +55,10 @@ def main():
         # Insert item
         elif selection == "4":
             print("\nINSERT ITEM")
+            # Get user input
             position_insert_input = int(input("Insert Position: "))
             new_item = input("Enter item: ")
+            # Insert item at position specified
             position_insert = position_insert_input - 1
             ranking_list.insert(position_insert, new_item)
 
@@ -99,10 +107,10 @@ def main():
             edited_item = ranking_list.pop(edit_item_index)
             ranking_list.insert(edit_item_index, edit_item_input)
 
-
             print("\nRANK LIST")
             for i in range(len(ranking_list)):
                 print(f"{str(i + 1)}: {ranking_list[i]}")
+        # End Loop
         elif selection == "8":
             done = True
 
