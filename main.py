@@ -1,6 +1,16 @@
 # Ranking List Assignment
 ranking_list = []
 
+def printList():
+    print("\nRANK LIST")
+     # Check if there is anything in the list
+    if len(ranking_list) == 0:
+        print("No Items in the Rank List")
+        # If there is something in the list then print it
+    else:
+        for i in range(len(ranking_list)):
+            print(f"{str(i + 1)}: {ranking_list[i]}")
+
 def main():
     # Python Menu Loop 
     done = False
@@ -62,10 +72,7 @@ def main():
             position_insert = position_insert_input - 1
             ranking_list.insert(position_insert, new_item)
 
-
-            print("\nRANK LIST")
-            for i in range(len(ranking_list)):
-                print(f"{str(i + 1)}: {ranking_list[i]}")
+            printList
         # Remove Item
         elif selection == "5":
             print("\nREMOVE ITEM")
